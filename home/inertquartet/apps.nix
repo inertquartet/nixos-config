@@ -3,10 +3,10 @@
 {
   home.packages = with pkgs; [
     # Browsers
-    # firefox
+    firefox
 
     # Productivity
-    # libreoffice-fresh
+    libreoffice-fresh
 
     # System tools
     btop
