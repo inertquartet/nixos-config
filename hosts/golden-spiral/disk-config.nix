@@ -30,7 +30,7 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/YOUR-EFI-UUID-HERE";
+    device = "/dev/disk/by-uuid/098F-3B19";
     fsType = "vfat";
     options = [ "fmask=0077" "dmask=0077" ]; # restrict EFI partition permissions
   };

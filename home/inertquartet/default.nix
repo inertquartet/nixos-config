@@ -7,8 +7,8 @@
     ./apps.nix
   ];
 
-  home.username = "chad";
-  home.homeDirectory = "/home/chad";
+  home.username = "inertquartet";
+  home.homeDirectory = "/home/inertquartet";
 
   # Must match system.stateVersion in your host config
   home.stateVersion = "25.11";

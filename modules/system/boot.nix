@@ -18,7 +18,7 @@
   # After install, enroll TPM2 and FIDO2 keyslots with systemd-cryptenroll.
   # This declaration tells the initramfs how to unlock it at boot.
   boot.initrd.luks.devices."cryptroot" = {
-    device = "/dev/disk/by-uuid/YOUR-UUID-HERE"; # replace after partitioning
+    device = "/dev/disk/by-uuid/6117ec91-278c-4ff9-b381-44e009e9fe16"; # replace after partitioning
     crypttabExtraOpts = [
       "tpm2-device=auto"   # use TPM2 if enrolled
       "fido2-device=auto"  # use FIDO2 if enrolled
@@ -38,7 +38,7 @@
 
   # Emergency/rescue mode: ensure your user can log in
   # This gives you a root shell on emergency.target without requiring the graphical stack
-  systemd.emergencyAction = "none"; # don't auto-reboot on emergency — let you intervene
+  systemd.enableEmergencyMode = true; # don't auto-reboot on emergency — let you intervene
 
   # Phase 3 placeholder — uncomment when adding lanzaboote:
   # boot.loader.systemd-boot.enable = lib.mkForce false;

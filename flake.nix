@@ -24,7 +24,7 @@
 
   outputs = { self, nixpkgs, home-manager, lanzaboote, nixos-hardware, ... }@inputs: {
 
-    nixosConfigurations.latitude7420 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.golden-spiral = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       # Pass inputs through so host/module files can reference them if needed
@@ -36,15 +36,15 @@
         nixos-hardware.nixosModules.dell-latitude-7420
 
         # Your machine config
-        ./hosts/latitude7420
+        ./hosts/golden-spiral
 
         # Home Manager as a NixOS module (applies with nixos-rebuild switch)
-        home-manager.nixosModules.homeManager
+        home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;    # use system nixpkgs, not a second copy
           home-manager.useUserPackages = true;  # install user packages into /etc/profiles
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.chad = import ./home/chad;
+          home-manager.users.inertquartet = import ./home/inertquartet;
         }
 
         # Lanzaboote module — imported now but not yet activated (Phase 3)

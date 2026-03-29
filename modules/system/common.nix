@@ -23,6 +23,8 @@
 
   # Flatpak for GUI apps that fight with Nix packaging
   services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Base system packages — keep this list small; user packages go in Home Manager
   environment.systemPackages = with pkgs; [
