@@ -31,6 +31,15 @@
       specialArgs = { inherit inputs; };
 
       modules = [
+      {
+        # allow 1Password even thought it's "unfree" software
+        nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+          "1password"
+          "1password-cli"
+          "1password-gui"
+        ];
+      }
+
         # nixos-hardware module for Dell Latitude 7420 — handles Intel GPU quirks,
         # power management, and known firmware workarounds automatically
         nixos-hardware.nixosModules.dell-latitude-7420

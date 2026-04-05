@@ -5,6 +5,7 @@
     ./shell.nix
     ./git.nix
     ./apps.nix
+    ./ssh.nix
   ];
 
   home.username = "inertquartet";

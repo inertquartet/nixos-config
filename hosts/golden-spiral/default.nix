@@ -9,6 +9,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/security.nix
     ../../modules/system/common.nix
+    ../../modules/system/desktop.nix
   ];
 
   networking.hostName = "golden-spiral";
@@ -19,6 +20,13 @@
     extraGroups = [ "wheel" "video" "audio" "networkmanager" ];
     # No password set here — use `passwd` after first boot,
     # or manage via home-manager's hashedPasswordFile option
+  };
+  
+  # 1Password CLI + GUI with polkit integration
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "inertquartet" ];
   };
 
   # Allow sudo for wheel group

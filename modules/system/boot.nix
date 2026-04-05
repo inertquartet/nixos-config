@@ -19,15 +19,10 @@
   # This declaration tells the initramfs how to unlock it at boot.
   boot.initrd.luks.devices."cryptroot" = {
     device = "/dev/disk/by-uuid/6117ec91-278c-4ff9-b381-44e009e9fe16"; # replace after partitioning
-    crypttabExtraOpts = [
-      "tpm2-device=auto"   # use TPM2 if enrolled
-      "fido2-device=auto"  # use FIDO2 if enrolled
-    ];
-    # fallback to passphrase if neither hardware key is present
   };
 
   # Make cryptsetup available in initramfs for emergency recovery
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "tpm_tis" ];
 
   # Ensure systemd-cryptenroll tooling is available in the live system
   environment.systemPackages = with pkgs; [
