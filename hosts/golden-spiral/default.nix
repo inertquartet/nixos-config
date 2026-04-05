@@ -10,6 +10,7 @@
     ../../modules/system/security.nix
     ../../modules/system/common.nix
     ../../modules/system/desktop.nix
+    ../../modules/system/snapshot.nix
   ];
 
   networking.hostName = "golden-spiral";
