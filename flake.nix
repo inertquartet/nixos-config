@@ -14,7 +14,7 @@
 
     # Lanzaboote for Secure Boot — add now, enable in Phase 3
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+      url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

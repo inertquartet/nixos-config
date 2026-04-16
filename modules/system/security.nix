@@ -1,4 +1,9 @@
-{ ... }:
+{ lib, ... }:
 {
-	# Placeholder for lanzaboote and hardening options to be added later
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
 }

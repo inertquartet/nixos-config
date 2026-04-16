@@ -5,8 +5,13 @@
 
 	# SDDM display manager w/ Wayland backend
 	services.displayManager.sddm = {
+		enable = false;
+		wayland.enable = false;
+	};
+
+	# Plasma Login Manager
+	services.displayManager.plasma-login-manager = {
 		enable = true;
-		wayland.enable = true;
 	};
 
 	# XWayland for legacy X11 app compatibility
