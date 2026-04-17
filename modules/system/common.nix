@@ -32,6 +32,12 @@
     vim
   ];
 
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   # Nix settings
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ]; # enable flakes
