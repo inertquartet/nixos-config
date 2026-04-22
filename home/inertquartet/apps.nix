@@ -15,6 +15,10 @@
     bat       # better cat
     eza       # better ls
 
+    # Logitech Software
+
+    fastfetch
+
     # Photo workflow (activate when ready)
     # darktable
     # rawtherapee
