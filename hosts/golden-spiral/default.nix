@@ -11,6 +11,7 @@
     ../../modules/system/common.nix
     ../../modules/system/desktop.nix
     ../../modules/system/snapshot.nix
+    ../../modules/system/gaming.nix
   ];
 
   networking.hostName = "golden-spiral";
