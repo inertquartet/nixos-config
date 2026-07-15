@@ -45,6 +45,7 @@
 	  "discord"
           "steam"
           "steam-unwrapped"
+          "hplip"
         ];
       }
 
