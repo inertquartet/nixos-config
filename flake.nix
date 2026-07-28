@@ -14,12 +14,13 @@
 
     # Lanzaboote for Secure Boot — add now, enable in Phase 3
     lanzaboote = {
-      # url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
       
       # Resolve issue introduced by recent NixOS unstable change that disallows setting `bootspec.enable`
       # This is done by pinning to a lanzaboote commit that addresses this issue
       # Ref: https://github.com/nix-community/lanzaboote/pull/617
-      url = "github:nix-community/lanzaboote/0403b4b7e8b2612657f0053a4c315e6c43eee9e6";
+      # This is no longer needed, but leaving here commented out for reference in case I need to do this in the future.
+      # url = "github:nix-community/lanzaboote/0403b4b7e8b2612657f0053a4c315e6c43eee9e6";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
