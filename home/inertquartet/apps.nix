@@ -14,10 +14,11 @@
     fd
     bat       # better cat
     eza       # better ls
-
-    # Logitech Software
-
     fastfetch
+
+    texstudio
+    texlive.combined.scheme-full
+
 
     # Photo workflow (activate when ready)
     # darktable

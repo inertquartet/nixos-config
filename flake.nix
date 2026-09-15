@@ -44,6 +44,7 @@
           "1password-cli"
           "1password-gui"
 	  "discord"
+	  "discord-unwrapped"
           "steam"
           "steam-unwrapped"
           "hplip"
