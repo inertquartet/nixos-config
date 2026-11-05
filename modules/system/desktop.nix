@@ -25,6 +25,7 @@
 		kdePackages.okular		# document viewer
 		kdePackages.filelight		# disk usage visualizer
 		kdePackages.kdeconnect-kde	# phone integration
+		zoom-us
 	];
 
 	# Enable KDE Connect firewall rules

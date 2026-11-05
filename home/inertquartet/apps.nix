@@ -1,12 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 {
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
+
   home.packages = with pkgs; [
     # Browsers
     firefox
 
     # Productivity
-    libreoffice-fresh
+    libreoffice
 
     # System tools
     btop
@@ -17,8 +24,15 @@
     fastfetch
 
     texstudio
-    texlive.combined.scheme-full
-
+    texliveMedium
+	
+    # fonts
+    cascadia-code
+    nerd-fonts.hack
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.noto
+    inter
+       
 
     # Photo workflow (activate when ready)
     # darktable
@@ -26,6 +40,33 @@
     # gphoto2        # camera import
     # rapid-photo-downloader  # import + rename workflow
   ];
+
+  fonts.fontconfig.enable = true;
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
+
+  # Spicetify / Spotify configuration
+  programs.spicetify = {
+    enable = true;
+
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "macchiato";
+
+    enabledExtensions = with spicePkgs.extensions; [
+      fullAppDisplay
+      shuffle
+      hidePodcasts
+      adblock
+    ];
+
+    enabledCustomApps = with spicePkgs.apps; [
+      newReleases
+      lyricsPlus
+    ];
+  };
 
   # VS Code with declarative extension list (optional)
   # programs.vscode = {

@@ -26,6 +26,12 @@
 
     # hardware: community collection of per-device hardware quirk modules
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # Spicetify/Spotify
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, lanzaboote, nixos-hardware, ... }@inputs: {
@@ -48,6 +54,8 @@
           "steam"
           "steam-unwrapped"
           "hplip"
+	  "zoom"
+	  "spotify"
         ];
       }
 
@@ -63,6 +71,7 @@
         {
           home-manager.useGlobalPkgs = true;    # use system nixpkgs, not a second copy
           home-manager.useUserPackages = true;  # install user packages into /etc/profiles
+	  home-manager.backupFileExtension = "backup"; # automatically appends .backup to clobbered files
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.inertquartet = import ./home/inertquartet;
         }
